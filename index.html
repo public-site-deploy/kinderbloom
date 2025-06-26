@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinderbloom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Kinderbloom</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#libri">Libri</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <div class="hero">
+      <h1>Benvenuti su Kinderbloom!</h1>
+      <p>Scopri un mondo colorato di libri e prodotti pensati per i bambini!</p>
+    </div>
+  </section>
+
+  <section id="libri" class="section">
+    <h2>I nostri libri</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="./images/jimmy_nel_cantiere.jpg"  alt="Jimmy nel cantiere">
+        <h3>immy nel cantiere</h3>
+        <p>Un divertente libro da colorare pensato per bambini e bambine curiosi del mondo dei cantieri! All'interno troverai tante illustrazioni in bianco e nero da colorare con gru, camion, operai, martelli, caschetti, viti, bulloni, occhiali di protezione e molto altro. Ogni disegno è semplice, con linee spesse e chiare, perfetto per le mani piccole e per stimolare la creatività. Ideale per imparare giocando e scoprire gli strumenti del mestiere!</p>
+        <a href="https://www.amazon.it/dp/esempio1" target="_blank">Compra su Amazon</a>
+      </div>
+  </section>
+
+  <section id="contatti" class="section">
+    <h2>Contattaci</h2>
+    <form id="contact-form">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="telefono" placeholder="Telefono">
+      <textarea name="messaggio" placeholder="Messaggio" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kinderbloom. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => alert("Messaggio inviato con successo!"))
+      .catch(error => alert("Si è verificato un errore."));
+    });
+  </script>
+</body>
+</html>
